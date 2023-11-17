@@ -1,0 +1,34 @@
+/*
+ *This is the main class will instantiate the initial number.
+ *by adding 18 to the sum. Printing the output:
+ *  -4
+ * 14
+ * 32
+ * 50
+ * 68
+ * 86
+ */
+public class SimpleLoop 
+{
+/*
+ * this calls  the method to count the initial number. 
+ */
+	public static void main(String[] args) 
+	{
+		// create a method that will count some Numbers 
+		countSomeNums();
+	}
+	/* 
+	 *this method will add  18 to the "i"  each time until 
+	 *the number gets to 86. 
+	 */
+	private static void countSomeNums() 
+	{
+		//create a loop within the method to add 18  
+		for (int  i = -4;  i<=86; i+=18)
+		{
+		//print i 	
+		System.out.println(i);		
+		}
+	}
+}
