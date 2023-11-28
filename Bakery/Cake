@@ -1,0 +1,88 @@
+/**
+ * This class instantiates cakes with different layers and flavors. 
+ * This will then be used in the main class. 
+ */
+public class Cake 
+{
+	//properties of cakes 
+	
+	//a property that stores the cake's flavor
+	String flavor = new String ("carrot");
+	
+	//declare  an int for layers 
+	int layers; 
+	
+	/**
+	 * This allows  us to instantiate an object.
+	 * We always instantiate cake with a crust.
+	 * 
+	 * @param  type  determines  the flaor  of  the  cake 
+	 */
+	
+	/**
+	 * This allows us to instantiate a pie.
+	 * We always instantiate pies the layers 
+	 * @param typee determines the flavor of this cake 
+	 */	
+	public Cake(String type)
+	{
+		//assign a flavor to this cake as it is created 
+		this.flavor = type; 
+		
+		//assign this cake layers 
+		this.layers =  1; 
+	}
+	public Cake(String str,  int z)
+	{
+		//assign a flavor to the cake as it is created 
+		this.flavor = str;  
+		
+		//assign a layer to the cake as it is created
+		this.layers = z;	
+	}
+	
+/**
+ * print/ tell me what flavor the cake is.  The object will have different filling 
+ * depending on the user's  input  when making the cake
+ */
+	public void getFlavor()
+	{
+		System.out.println("The cake's flavor is " + this.flavor);
+	}
+	
+	/**
+	 * this will print the amount of layers the cake  has  which will always be  one 
+	 */
+	public void getLayers()
+	{
+		System.out.println("The cake has " + layers + "layer(s)");
+
+	}
+	/**
+	 * This method  allows the user to change  the flavor of the cake after it is 
+	 * already instantiated.
+	 * @param newFlavor newFlavor resets the original flavor given to the cake
+	 */
+	public void setFlavor(String newFlavor)
+	{
+		//change  the flavor of the cake to the input string 
+		this.flavor = newFlavor;	
+	}
+	/**
+	 * This method should print/ tell me if the pie is tasty. 
+	 * All cakes are yummy so this method will always tell me the cake is tasty. 
+	 */
+	public static void tellIfTasty()
+	{
+		//print state to tell us if its tasty 
+		System.out.println("The  cake is soooooo tasty.");
+	}
+	/**
+	 * This method always adds one to  the amount of layers
+	 */
+	public void incrementLayer()
+	{
+		this.layers = layers++;
+	}
+	
+}
