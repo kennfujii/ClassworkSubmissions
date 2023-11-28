@@ -1,0 +1,61 @@
+/**
+ * This class is the main class it used to generate  
+ * multiple baked goods that we will define the behavior 
+ * of  in their own classes.  Here,  all wee'll do is 
+ * create the baked goods. And maybe print some info. 
+ */
+public class BakeryMain 
+{
+	/**
+	 * The main method is a method that always runs  
+	 * whenever the class is run. We don't need to 
+	 * call its name. it just runs. 
+	 * 
+	 * This is the method where we will instantiate 
+	 * new baked goods. And also print stuff
+	 * 
+	 * @param args (idk why this is needed) - but doesn't work without this 
+	 */
+	public static void main(String[] args)
+	{
+		// instantiate first baked good, a pie
+		Pie myFirstPie  = new Pie("Key Lime");
+		
+		//instantiate second baked good, a pie
+		Pie mySecondPie = new Pie ("apple");
+		
+		//test if the tellYummy method works 
+		//static method so it works  with any pie 
+		Pie.tellIfYummy();
+		
+		//this is NOT static because it depends on the object 
+		//tell me what my first pie's flavor is 
+		myFirstPie.tellFlavor();
+		
+		
+		//tell what my second pie's flavor  is  
+		mySecondPie.tellFlavor();
+		
+		//separates the cakes and pies 
+		System.out.println("");
+		
+		//instantiate a  cake
+		Cake myFirstCake = new Cake ("chocolate", 5);
+		
+		//check the flavor  of  the  first cake 
+		myFirstCake.getFlavor();
+		
+		//check the layers of the  first cake 
+		myFirstCake.getLayers();
+		
+		//instantiate a second cake 
+		Cake mySecondCake  = new Cake ("carrot");
+		
+		//check the flavor  of  the second cake 
+		mySecondCake.getFlavor();
+				
+		//check the layers of the second cake
+		mySecondCake.getLayers();		
+	}	
+		
+}
