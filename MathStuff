@@ -1,0 +1,64 @@
+/**
+ * This is the main class for the math multiplication without using the multiplication  symbol.
+ * This  will  include a loop and given two numbers to multiply together
+ */
+public class MathStuff 
+{
+
+	public static void main(String[] args) 
+	{
+		//declare two number to test math methods  on 
+		int myInt = -4;
+		double myDub =  -16.0;
+		
+		//test the sqrt method
+		//it should find the square root 
+		double mySqrt= Math.sqrt(myDub);
+		System.out.println(mySqrt);
+
+		//test the abs method with the int and with the double
+		//it should find the absolute value 
+		double myAbsDub = Math.abs(myDub);
+		System.out.println(myAbsDub);
+		
+		double myAbsInt = Math.abs(myInt);
+		System.out.println(myAbsInt);
+		
+		//test the pow method  
+		//it will find the exponent of the number 
+		//it only returns doubles
+		int base = 2;
+		int exp = 5;
+		double prod = Math.pow(base, exp);
+		System.out.println(prod);
+		
+		//print a random number from (1-10)
+		double maxNum = 10;
+		double minNum = 1;
+		double myRandomNum = Math.random(minNum, maxNum);
+		System.out.println(myRandomNum);
+				
+		// call  a method that will pass two parameters that are both ints 
+		multTwoNums(5,4);
+	}
+	/**
+	 * 
+	 * @param i first int
+	 * @param j second int
+	 */
+	private static void multTwoNums(int x, int y) 
+	{
+		//separates for organization 
+		System.out.println();
+		
+		//make  a for loop to multiply i and j without a multiplication  symbol (*)
+		int output = 0;
+		//add x(5)  to itself y(4) times
+		for (int i = 0; i<=y; i++)
+		{
+			output += y;
+		}
+			//Print output
+			System.out.println(output);
+	}
+}
