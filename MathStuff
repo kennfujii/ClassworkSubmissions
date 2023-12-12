@@ -1,9 +1,13 @@
+import java.util.Random;
+
 /**
  * This is the main class for the math multiplication without using the multiplication  symbol.
  * This  will  include a loop and given two numbers to multiply together
  */
 public class MathStuff 
 {
+
+	private static final int intA = 0;
 
 	public static void main(String[] args) 
 	{
@@ -16,13 +20,15 @@ public class MathStuff
 		double mySqrt= Math.sqrt(myDub);
 		System.out.println(mySqrt);
 
+		
 		//test the abs method with the int and with the double
-		//it should find the absolute value 
+		//it should find the absolute value of myDub
 		double myAbsDub = Math.abs(myDub);
 		System.out.println(myAbsDub);
-		
+		//it should find the absolute value of myInt
 		double myAbsInt = Math.abs(myInt);
 		System.out.println(myAbsInt);
+		
 		
 		//test the pow method  
 		//it will find the exponent of the number 
@@ -31,16 +37,138 @@ public class MathStuff
 		int exp = 5;
 		double prod = Math.pow(base, exp);
 		System.out.println(prod);
+
 		
-		//print a random number from (1-10)
-		double maxNum = 10;
-		double minNum = 1;
-		double myRandomNum = Math.random(minNum, maxNum);
-		System.out.println(myRandomNum);
+//New Assignment 12/7	
+	//Task 1: create a method that generates a random number from 1 to ten inclusive 
+	//declare a max and a min value	
+		int min = 1;
+		int max = 10; 
+		int a =  (int) (Math.random()* (max-min+1)+min);
+		System.out.println("Task #1 Answer: " +(int)a);
+		
+	//Task 2: declare intA as -36  and intB as 12		
+		int intA = -36;
+		int intB = 12;
+
+	//Task 3: declare two doubles called dubA as -100.0 and dubB as 0.64
+		double dubA = -100.0;
+		double dubB  = 0.64;  
+		
+		
+	//Task 4: Instantiate two Integer objects called integerA and integerB 
+	//with the same values as the ints
+		Integer integerA = -36; 
+		Integer integerB = 12; 
+	
+	//Task 5: Instantiate two Double objects called doubleA and doubleB 
+	//with the same values as the doubles. 
+		Double doubleA = -100.0;
+		Double doubleB = 0.64; 
 				
-		// call  a method that will pass two parameters that are both ints 
+		
+//Classwork		
+	//#1:  Instantiate an Integer object 
+		Integer myInteger = 4;
+		
+	//print out the max and min values an Integer  can store 
+		System.out.println(Integer.MAX_VALUE);
+		System.out.println(Integer.MIN_VALUE);
+		
+		
+	//#2: Instantiate a double object 
+		Double myDouble = 6.6;
+		
+	//Print out the max and min values a double object can store
+		System.out.println(Double.MAX_VALUE);
+		System.out.println(Double.MIN_VALUE);
+
+		
+	//#3: Declare an int and print it as a double  
+		int f =5;
+		System.out.println((double)f);
+		
+	//#4:  Declare a double and print it as an int
+	//this was an example of casting
+		double b = 7.7;
+		System.out.println((int)b);
+		
+		
+	// call  a method that will pass two parameters that are both ints 
 		multTwoNums(5,4);
+	
+	
+	//Task #6: call a mathod that will raise one int to another
+		raiseTwoIntNums(intA,intB);
+		
+	//Task  #7: call a method that will raise one Integer to another Integer 
+		raiseTwoIntegerNum (integerA, integerB);	
+	
+	//Task #8: call a method that will raise one double raised to 
+	//the power of the other double. 
+		raiseTwoDubNums(dubA, dubB);
+		
+	//Task #9: call a method  that will raise one Double to another Double. 
+		raiseTwoDoubleNums(doubleA, doubleB);
+		
+	//Task #10: 	
+		
 	}
+
+	private static void raiseTwoDoubleNums(Double doubleA, Double doubleB) 
+	{
+		double result = doubleA;  
+		for (int i =1; i<doubleB; i++)
+		{
+			doubleA *= result;
+		}
+		//Print result DoubleB is "+ doubleA);
+		System.out.println("DoubleA to the power of DoubleB is "+ doubleA);
+
+		
+	}
+
+	private static void raiseTwoDubNums(double dubA, double dubB) 
+	{
+		double result = dubA;  
+		for (int i =1; i<dubB; i++)
+		{
+			dubA *= result;
+		}
+		//Print result 
+		System.out.println("dubA to the power of dubB is "+ dubA);
+		
+	}
+
+	private static void raiseTwoIntegerNum(Integer integerA, Integer integerB) 
+	{
+		int result = integerA;  
+		for (int i =1; i<integerB; i++)
+		{
+			integerA *= result;
+		}
+		//Print result 
+		System.out.println("IntegerA to the power of IntegerB is "+ integerA);
+		
+	}
+	
+/**
+ * This method raises one int to another
+ * @param intA
+ * @param intB
+ */
+	private static void raiseTwoIntNums(int intA, int intB) 
+	{
+		int result = intA;  
+		for (int i =1; i<intB; i++)
+		{
+			intA *= result;
+		}
+		//Print result 
+		System.out.println("intA to the power of intB is "+ intA);
+		
+	}
+
 	/**
 	 * 
 	 * @param i first int
@@ -52,13 +180,37 @@ public class MathStuff
 		System.out.println();
 		
 		//make  a for loop to multiply i and j without a multiplication  symbol (*)
-		int output = 0;
+		int output = x;
 		//add x(5)  to itself y(4) times
-		for (int i = 0; i<=y; i++)
+		for (int i = 1; i<y; i++)
 		{
-			output += y;
+			x*= output;
 		}
 			//Print output
-			System.out.println(output);
+		System.out.println(x);	
+	
+	//declaring two int values 
+	int q = 7;
+	int r = 2; 
+	
+	//creates a new int (integerSum) and assigns the value that the method
+	//returns
+	int integerSum = addtwoIntegers (q,r);
+	System.out.println(integerSum);
 	}
+	
+	/**
+	 * This method takes in two Integer objects and returns their sum as an int
+	 * Even though the formal parameters are integers, it will turn passed ints into 
+	 * Integers  automatically. This process is called autoboxing. 
+	 * @param x the first multiples
+	 * @param y the  second mulitiples
+	 * @return the product of a and b as an int
+	 */
+	public static int addtwoIntegers(Integer a, Integer b) 
+	{	
+		//Print output
+		return a.intValue() +b.intValue();
+	}
+	
 }
