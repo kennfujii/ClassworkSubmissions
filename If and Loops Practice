@@ -1,0 +1,120 @@
+import java.util.Scanner;
+
+public class IfsAndLoops 
+{
+//TASK 1: Scan in two ints and store them as Integers called 'x' and 'y.'
+	public static void main(String[] args)
+	{
+	//Tell the user to input the number
+	System.out.println("Hi user,please input two numbers with one space in between.");
+	System.out.println("The code will then tell you if your inputed numbers are even or odd.");
+	System.out.println("AND find the your first number's exponent table until  the second number as the power");
+	//TASK #1: Scan in two ints and store them as Integers called
+	// 'x' and 'y'
+	Scanner consoleReader = new Scanner(System.in);
+	//scan in two ints
+		Integer x = consoleReader.nextInt();
+		Integer y = consoleReader.nextInt();	
+		
+	//close scanner
+		consoleReader.close();
+		
+	//create a method to pass x and y. This method should print 
+	//whether or not they are both odd, both even, or if they are 
+	//different.
+		printEvenOrEdd(x,y);
+		
+	//create a method to pass x and y print the exponent table 
+	//of x to the y. If either number is negative, print an error message instead. 
+		printExpTable(x,y);
+		
+	//create a method will return the factorial of a number. If it is negative, instead 
+	//print an error message and return -1. 
+		getFactX(x);
+	}		
+
+/**
+ * TASK #2: Calls the printEvenOrOdd Method	
+ * @param x is inputed by the user and will be checked to be even or odd
+ * @param y is inputed by the user and will be checked to be even or odd
+ */
+	private static void printEvenOrEdd(Integer x, Integer y) 
+	{
+		//make an if statement to see whether it is both even
+		if(x%2==0 && y%2 ==0)
+		{
+			// print statement
+			System.out.println(x + " and " + y +" are both even");
+		}
+		//make an else if statement to see whether it is both odd
+		else if (x%2!=0 && y%2!=0)
+		{ 
+			// print statement
+			System.out.println(x + " and " + y +" are both odd");
+		}
+		//make an else if statement to see whether which is odd or even
+		else if (x%2 !=0  && y%2==0)
+		{
+			// print statement
+			System.out.println(x + " is odd, and " + y +" is even.");
+		}
+		//make an else if statement to see whether which is odd or even
+		else if (x%2==0  && y%2!=0)
+		{
+			// print statement
+			System.out.println(x + " is even, and " + y +" is odd.");
+		}
+	}
+	
+/**
+ * TASK #3: Call a method named "printExpTable" that will be passed x 
+ * and y print the exponent table of x to the y. If either number is 
+ * negative, print an error message instead.
+ * @param x is inputed by the user and be the base of the product
+ * @param y is inputed by the user and be the power of the product
+ */
+	private static void printExpTable(Integer x, Integer y) 
+	{
+		//make a for loop statement for the method
+		for (int i = 1;  i<=y; i++)
+		{
+			//make an if statement
+			if (x>=0  && y>=0)
+			{ 
+				double base = (double)x;
+				double expo = (double)i;
+				double product = Math.pow(base,expo);
+				//Print our the exponent table  of  x to the i
+				System.out.println(x + " to the " + i + " power equals " + product);
+			}	
+		}
+		//make an if statement for negative  numbers
+		if (x<=0 || y<=0)
+		{
+			//print out the  rejection  statement of the negative  numbers
+			System.out.println("One or both of the numbers are negative, "
+					+ "so i don't know how to do that as a base and exponent "
+					+ "& as a factorial.");
+		}
+	}
+/**
+ * TASK #4:	will return the factorial of a number. If it is negative, instead print an error message
+ * and return -1. In the main method, add a print statement that will print "The value of the 
+ * factorial is (the returned value)."
+ * @param x  
+ * @param y
+ * @return 
+ */
+	private static void getFactX(Integer x) 	
+	{
+		//make a  for loop to get the  factorial  of x 
+		int num = x;
+		int fact = 1;
+		for (int i = 1; i<=num; i++)
+		{
+			fact = fact *i;
+		}
+		//print the factorial 
+		System.out.println("The factorial of "  + x + " is " + fact + ".");
+	}
+}
