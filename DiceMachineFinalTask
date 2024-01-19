@@ -1,0 +1,88 @@
+import java.util.Scanner;
+
+/**
+ * This is the main class to roll a dice or dices with 6 or 8 faces on it.
+ * This class will roll the dice however many times the user inputs the roll
+ * number. 
+ */
+public class DiceMachineFinalTask 
+{
+/**
+ * This is the main method to rolling dice. 
+ * @param args
+ */
+	public static void main(String[] args) 
+	{
+		//scan in the number of times the dice will roll 
+		Scanner numTaker = new  Scanner(System.in);
+
+		//instructions for the user
+		System.out.println("");
+		
+		//make  a code that passes a string as numbers 
+		String diceRoll = numTaker.nextLine();
+		int mid = diceRoll.indexOf('d');
+		String left = diceRoll.substring(0, diceRoll.indexOf('d'));
+		String right = diceRoll.substring(diceRoll.indexOf ('d')+ 1, diceRoll.length());
+		
+		//create a method to take in the different characters 
+		seperateString(left,right);
+		
+		//close the scanner 
+		numTaker.close();
+	}
+/**
+ * This method will be used to tell the user how many dices will be rolled from their
+ * input and the number of faces of the dice. It will change the strings into ints. 
+ * Then call another method. 
+ * @param left is the first number inputed that will be the number of dice being rolled.
+ * @param right is the second number inputed that will be the number of face on the dice.
+ */
+	
+private static void seperateString(String left, String right)
+{	
+	
+	//print what the first and second  number means 
+	System.out.println(left + " dice(s) will be rolled that have " + right + "-face dice.");
+	
+	// create the strings into numbers 
+	int a = Integer.valueOf(left);
+	int b = Integer.valueOf(right);
+	
+	//Subtask 1: add the numbers together
+	//make an int to add a and b together 
+	//print the sum
+	
+	//Subtask 2: call a method called "rollDice"
+	rollDice(a,b);
+}
+
+/**
+ * This method will be rolling the "actual" dice using a random number generator from
+ * the amount of dice rolled based on the number of the possible max face on the dice.
+ * @param x is the first number inputed that will be the number of dice being rolled.
+ * @param y is the second number inputed that will be the number of face on the dice.
+ */
+private static void rollDice(int x, int y) 
+{
+	//print each random number 
+	System.out.println("The dice rolls: ");
+	
+	//this is the starting number that will be added onto
+	int main = 0; 
+	
+	//make a loop to add the random roll  'x' times
+	for(int i=1; i<= x; i++)
+	{
+		//create random number generator to take in the first number of the input 
+		int randomNum = (int)((double)(Math.random() * y +1));
+		System.out.println(randomNum);
+		
+		//Add each of the random number generator to the main int #
+		main += randomNum;
+	}	
+	//print the statement together
+	System.out.println("This gives sum of " + main);
+
+}
+}
