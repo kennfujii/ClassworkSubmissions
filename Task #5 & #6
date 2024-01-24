@@ -1,0 +1,39 @@
+//Task #5:  Make a method that is passed a String and returns a different String 
+//that is the same as the passed String without any spaces. 
+
+import java.util.Scanner;
+
+public class Task5 
+{
+	public static void main(String[] args) 
+	{
+		//print instructions
+		System.out.println("Please input a couple of words and this code "
+				+ "will remove the spaces between the words.");
+	
+		//make a scanner for the input 
+		Scanner inputTaker = new Scanner (System.in);
+		
+		//make the string to pass in the method 
+		String thing = inputTaker.nextLine();
+		
+		//create a method to remove the space from the user's input
+		removeSpace(thing);
+		
+		//close the scanner
+		inputTaker.close();
+	}
+/**
+ * This method takes ina string and returns a different string that is the 
+ * same as the passed string, but without the strings.
+ * @param stuffs
+ */
+	private static void removeSpace(String stuffs) 
+	{
+	//make the string into another string	
+	String newStuff = stuffs.replace(" ", "");
+	//print the new string
+	System.out.println(newStuff);
+	}
+
+}
