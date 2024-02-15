@@ -1,0 +1,61 @@
+/** 
+ * The purpose of this class is to store the grades of students. 
+ * We will also make getGPA() from all the grade values. 
+ */
+public class Student 
+{
+	//list the properties/ data attributes 
+	private double scienceGrade; 
+	private double mathGrade; 
+	private double theologyGrade;
+	private int gradeLevel;
+	
+	//create a string of the kid's name 
+	private String name; 
+	
+	/**
+	 * This constructor lets us make student grades, grade level and their name . 
+	 * we pass it numbers to be the initial values for the date attributes. 
+	 * @param a = scienceGrade
+	 * @param b = mathGrade
+	 * @param c = theologyGrade 
+	 * @param d = gradeLevel 
+	 * @param n = name
+	 */
+	public Student (double a, double b, double c, int d, String n)
+	{
+		scienceGrade = a; 
+		mathGrade = b; 
+		theologyGrade = c; 
+		gradeLevel = d; 
+		name = n; 
+	}
+	
+	//functionalities: to find the average, we must add up all of the grades, 
+	//the divide it by the amount of grades we are putting in. So in this case it
+	//would be scienceGrade plus mathGrade plus theologyGrade, then you divide it by 
+	//three since there are three things you are adding. 
+	
+	/**
+	 * This will use the grades from the scienceGrade, mathGrade, and theologyGrade 
+	 * to find the total GPA. 
+	 * The user will be able to access this method. 
+	 * @return G for the final GPA
+	 */
+	public double getGPA()
+	{
+		double G = (scienceGrade + mathGrade + theologyGrade)/ 3;
+		return G; 
+	}
+	
+	/**
+	 * This will use the names from the name to introduce the student. 
+	 * The user will be access this method 
+	 */
+	public  void introduceSelf()
+	{
+		System.out.println("I am a student in grade " + gradeLevel + 
+				". My name is " + name + ". My average GPA is " + getGPA());
+		
+	}
+}
