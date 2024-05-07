@@ -1,4 +1,3 @@
-
 public class TwoDArrayTrav {
 
 	public static void main(String[] args) 
@@ -65,13 +64,12 @@ public class TwoDArrayTrav {
 	//the first, second, AND the third element of each row. See a patern? If you turn this code into 
 	//a loop, your nested loops will print out every element.) 
 	System.out.print("Task 6: ");
-	for (int j = 0; j<=column; j++)
+	for (int c = 0; c <  column; c++)
 	{
-		for (int k  = 0;  k < column; k++)
+		for (int r  = 0;  r < rows; r++)
 		{
-		System.out.print(name1 [j][k]+" ");
+		System.out.print(name1 [r][c]+" ");
 		}
 	}
 }
 }	
-	
